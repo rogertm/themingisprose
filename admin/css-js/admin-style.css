@@ -1,0 +1,28 @@
+/**
+ * Theming is Prose
+ *
+ * @package			WordPress
+ * @subpackage		Theming is Prose: Admin Style
+ * @author			RogerTM
+ * @license			license.txt
+ * @link			https://themingisprose.com/
+ * @since 			Theming is Prose 1.0
+ */
+
+#t-em-setting .text-option.custom-pages{
+	border-bottom: 1px solid #dfdfdf;
+	padding: 10px;
+	margin-bottom: 3px;
+}
+#t-em-setting .row-action {
+	color: #ddd;
+	font-size: 13px;
+	padding: 2px 0px 0px;
+	visibility: hidden;
+}
+#t-em-setting .row-action span{
+	display: inline !important;
+}
+#t-em-setting .text-option.custom-pages:hover .row-action{
+	visibility: visible;
+}
