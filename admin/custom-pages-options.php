@@ -1,19 +1,19 @@
 <?php
 /**
- * Twenty'em All
+ * Theming is Prose
  *
  * @package			WordPress
- * @subpackage		Twenty'em All: Admin > Custom Pages
+ * @subpackage		Theming is Prose: Admin > Custom Pages
  * @author			RogerTM
  * @license			license.txt
  * @link			https://themingisprose.com/twenty-em
- * @since 			Twenty'em All 1.0
+ * @since 			Theming is Prose 1.0
  */
 
 /**
  * Array of pages object
  *
- * @since Twenty'em All 1.0
+ * @since Theming is Prose 1.0
  */
 function themingisprose_list_pages( $type ){
 	$args = array(
@@ -31,7 +31,7 @@ function themingisprose_list_pages( $type ){
 /**
  * Custom Pages
  *
- * @since Twenty'em All 1.0
+ * @since Theming is Prose 1.0
  */
 function themingisprose_custom_pages( $custom_pages = '' ){
 	$custom_pages = array(
@@ -98,7 +98,7 @@ function themingisprose_custom_pages( $custom_pages = '' ){
 /**
  * Render Custom Pages panel
  *
- * @since Twenty'em All 1.0
+ * @since Theming is Prose 1.0
  */
 function themingisprose_setting_fields_custom_pages(){
 	global $t_em;

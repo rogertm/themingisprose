@@ -1,4 +1,6 @@
 #Ignore files
+.sass-cache
+.sass-cache/*.*
 cache
 cache/*.*
 themingisprose.sublime-project

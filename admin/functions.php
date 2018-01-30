@@ -41,7 +41,7 @@ add_action( 'admin_enqueue_scripts', 'themingisprose_admin_enqueue' );
  * This function is attached to the "t_em_admin_filter_default_theme_options" filter hook
  * @return array 	Array of options
  *
- * @since Twenty'em All 1.0
+ * @since Theming is Prose 1.0
  */
 function themingisprose_default_theme_options( $default_theme_options ){
 	$themingisprose_default_options = array();
@@ -64,7 +64,7 @@ add_filter( 't_em_admin_filter_default_theme_options', 'themingisprose_default_t
  * @param $input array  Array of options to validate
  * @return array
  *
- * @since Twenty'em All 1.0
+ * @since Theming is Prose 1.0
  */
 function themingisprose_theme_options_validate( $input ){
 	if ( ! $input )

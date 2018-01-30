@@ -28,11 +28,19 @@ add_action( 'after_setup_theme', 'themingisprose_setup' );
  */
 function themingisprose_enqueue(){
 	global $t_em_theme_data;
-
-	$less_files = array( T_EM_CHILD_THEME_DIR_PATH . '/css/style-theme.less' => T_EM_CHILD_THEME_DIR_URL . '/css' );
-	$options = array( 'compress' => true );
-	wp_enqueue_style( 'child-style-less', t_em_lessphp_compiler( $less_files, $options ), '', $t_em_theme_data['Version'], 'all' );
-
+	wp_register_style( 'child-style', t_em_get_css( 'theme', T_EM_CHILD_THEME_DIR_PATH .'/css', T_EM_CHILD_THEME_DIR_URL .'/css' ), '', $t_em_theme_data['Version'], 'all' );
+	wp_enqueue_style( 'child-style' );
 }
 add_action( 'wp_enqueue_scripts', 'themingisprose_enqueue' );
+
+/**
+ * Dequeue styles form parent theme
+ *
+ * @since Theming is Prose 1.0
+ */
+function themingisprose_dequeue(){
+	wp_dequeue_style( 'twenty-em-style' );
+	wp_deregister_style( 'twenty-em-style' );
+}
+add_action( 'wp_enqueue_scripts', 'themingisprose_dequeue', 999 );
 ?>
