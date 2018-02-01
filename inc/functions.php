@@ -43,4 +43,13 @@ function themingisprose_dequeue(){
 	wp_deregister_style( 'twenty-em-style' );
 }
 add_action( 'wp_enqueue_scripts', 'themingisprose_dequeue', 999 );
+
+/**
+ * Remove some unnecessary templates
+ *
+ * @since Theming is Prose 1.0
+ */
+function t_em_front_page_widgets(){
+	return false;
+}
 ?>

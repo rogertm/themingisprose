@@ -63,13 +63,6 @@ function themingisprose_custom_pages( $custom_pages = '' ){
 			'user_menu'		=> '',
 			'type'			=> 'page',
 		),
-		'page_plans'	=> array(
-			'value'			=> 'page_plans',
-			'label'			=> __( 'Page Plans', 'themingisprose' ),
-			'public_label'	=> __( 'Plans', 'themingisprose' ),
-			'user_menu'		=> '',
-			'type'			=> 'page',
-		),
 		'page_contact'	=> array(
 			'value'			=> 'page_contact',
 			'label'			=> __( 'Page Contact', 'themingisprose' ),

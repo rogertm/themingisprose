@@ -16,4 +16,5 @@
 
 require( get_stylesheet_directory() . '/admin/functions.php' );
 require( get_stylesheet_directory() . '/admin/custom-pages-options.php' );
+require( get_stylesheet_directory() . '/admin/hooks.php' );
 ?>

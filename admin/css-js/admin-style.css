@@ -26,3 +26,8 @@
 #t-em-setting .text-option.custom-pages:hover .row-action{
 	visibility: visible;
 }
+#t-em-setting #text_widget_five,
+#t-em-setting #text_widget_six{
+	display: inline-block;
+	width: 50%;
+}
