@@ -3,7 +3,7 @@
 	"description": "Twenty'em Child Theme",
 	"keywords": ["wordpress", "framework", "child theme"],
 	"homepage": "https://github.com/rogertm/themingisprose",
-	"license": "GPL",
+	"license": "GPL-2.0-or-later",
 	"authors": [
 		{
 			"name": "RogerTM",
