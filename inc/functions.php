@@ -30,6 +30,8 @@ function themingisprose_enqueue(){
 	global $t_em_theme_data;
 	wp_register_style( 'child-style', t_em_get_css( 'theme', T_EM_CHILD_THEME_DIR_PATH .'/css', T_EM_CHILD_THEME_DIR_URL .'/css' ), '', $t_em_theme_data['Version'], 'all' );
 	wp_enqueue_style( 'child-style' );
+
+	t_em_register_bootstrap_plugin( 'carousel' );
 }
 add_action( 'wp_enqueue_scripts', 'themingisprose_enqueue' );
 

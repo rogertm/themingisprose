@@ -16,7 +16,7 @@
  *
  * @since Theming is Prose 1.0
  */
-function themingisprose_work_flow(){
+function themingisprose_work_flow_card(){
 	if ( ! is_front_page() )
 		return;
 
@@ -76,5 +76,89 @@ function themingisprose_work_flow(){
 	</section>
 <?php
 }
-add_action( 't_em_action_main_before', 'themingisprose_work_flow' );
+// add_action( 't_em_action_main_before', 'themingisprose_work_flow_card' );
+
+/**
+ * Work Flow step by step
+ * This function uses the data provided by Front Page Widgets Options
+ *
+ * @since Theming is Prose 1.0
+ */
+function themingisprose_work_flow_slide(){
+	if ( ! is_front_page() )
+		return;
+
+	global $t_em;
+?>
+	<section id="work-flow" class="bg-secondary">
+		<div class="<?php echo t_em_container() ?>">
+			<div id="work-flow-carousel" class="carousel slide" data-ride="carousel">
+				<?php
+					$slides = t_em_front_page_widgets_options();
+					$ts = count( $slides );
+					$ind = array_keys( $slides );
+				?>
+				<!-- <pre><?php print_r( $ind ) ?></pre> -->
+				<ol class="carousel-indicators">
+				<?php $s = 0; while ( $s < $ts ) : ?>
+					<li data-target="#work-flow-carousel" data-slide-to="<?php echo $s ?>">
+						<span class="<?php echo $t_em['headline_icon_class_'.$ind[$s].''] ?>"></span>
+						<p><?php echo $t_em['headline_'.$ind[$s].''] ?></p>
+					</li>
+				<?php $s++; endwhile; ?>
+					</ol><!-- .carousel-indicators -->
+				<div class="carousel-inner">
+
+				<?php
+					foreach ( $slides as $widget ) :
+						if ( ! empty( $t_em['headline_'.$widget['name'].''] ) || ! empty( $t_em['content_'.$widget['name'].''] ) ) :
+						$widget_icon_class	= ( $t_em['headline_icon_class_'.$widget['name'].''] ) ?
+							'<span class="'. $t_em['headline_icon_class_'.$widget['name'].''] .' h1"></span> ' : null;
+
+						$widget_thumbnail_url	= ( $t_em['thumbnail_src_'.$widget['name'].''] ) ?
+							'<div class="work-flow-img '. t_em_grid( '5' ) .'"><img src="'. $t_em['thumbnail_src_'.$widget['name'].''] .'" alt="'. sanitize_text_field( $t_em['headline_'.$widget['name']] ) .'"/></div>' : null;
+
+						$widget_headline	= ( $t_em['headline_'.$widget['name'].''] ) ?
+							'<header class="work-flow-heading">'. $widget_icon_class .'<h3 class="h4">'. $t_em['headline_'.$widget['name'].''] .'</h3></header>' : null;
+
+						$widget_content		= ( $t_em['content_'.$widget['name'].''] ) ?
+							'<div class="work-flow-body lead">'. t_em_wrap_paragraph( do_shortcode( $t_em['content_'.$widget['name']] ) ) .'</div>' : null;
+
+						$primary_link_text			= ( $t_em['primary_button_text_'.$widget['name']] ) ? $t_em['primary_button_text_'.$widget['name']] : null;
+						$primary_link_icon_class	= ( $t_em['primary_button_icon_class_'.$widget['name']] ) ? $t_em['primary_button_icon_class_'.$widget['name']] : null;
+						$primary_button_link 		= ( $t_em['primary_button_link_'.$widget['name']] ) ? $t_em['primary_button_link_'.$widget['name']] : null;
+						$secondary_link_text		= ( $t_em['secondary_button_text_'.$widget['name']] ) ? $t_em['secondary_button_text_'.$widget['name']] : null;
+						$secondary_link_icon_class	= ( $t_em['secondary_button_icon_class_'.$widget['name']] ) ? $t_em['secondary_button_icon_class_'.$widget['name']] : null;
+						$secondary_button_link 		= ( $t_em['secondary_button_link_'.$widget['name']] ) ? $t_em['secondary_button_link_'.$widget['name']] : null;
+
+						if ( ( $primary_button_link && $primary_link_text ) || ( $secondary_button_link && $secondary_link_text ) ) :
+								$primary_button_link_url = ( $primary_button_link && $primary_link_text ) ?
+									'<a href="'. $primary_button_link .'" class="btn btn-primary primary-button">
+									<span class="'.$primary_link_icon_class.'"></span> <span class="button-text">'. $primary_link_text .'</span></a>' : null;
+
+								$secondary_button_link_url = ( $secondary_button_link && $secondary_link_text ) ?
+									'<a href="'. $secondary_button_link .'" class="btn btn-secondary secondary-button">
+									<span class="'.$secondary_link_icon_class.'"></span> <span class="button-text">'. $secondary_link_text .'</span></a>' : null;
+
+							$widget_footer = '<footer class="work-flow-footer">'. $primary_button_link_url . ' ' . $secondary_button_link_url .'</footer>';
+						else :
+							$widget_footer = null;
+						endif;
+				?>
+					<div class="carousel-item" style="height:20rem;">
+						<div class="carousel-caption d-block text-dark">
+							<h3><?php echo $widget_headline; ?></h3>
+							<?php echo $widget_content ?>
+						</div>
+					</div>
+				<?php
+						endif;
+					endforeach; ?>
+				</div>
+			</div>
+		</div>
+	</section>
+<?php
+}
+add_action( 't_em_action_main_before', 'themingisprose_work_flow_slide' );
 ?>
