@@ -7,8 +7,7 @@
 	"minimum-stability": "stable",
 	"type": "wordpress-theme",
 	"require": {
-		"php": ">=7.0",
-		"rogertm/twenty-em": "dev-master"
+		"php": ">=7.0"
 	},
 	"authors": [
 		{
