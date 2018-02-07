@@ -29,6 +29,7 @@ add_filter( 't_em_admin_filter_header_options_header_image', '__return_false' );
 add_filter( 't_em_admin_filter_header_options_slider', '__return_false' );
 add_filter( 't_em_admin_filter_front_page_options_wp_front_page', '__return_false' );
 add_filter( 't_em_admin_filter_archive_options_the_content', '__return_false' );
+// add_filter( 't_em_admin_filter_front_page_options_widgets_from_page', '__return_false' );
 
 /**
  * Enqueue styles and scripts
@@ -54,6 +55,7 @@ add_action( 'admin_enqueue_scripts', 'themingisprose_admin_enqueue' );
 function themingisprose_default_theme_options( $default_theme_options ){
 	$themingisprose_default_options = array(
 		// Custom Front Page Text Witgets Options
+		'work_flow_title'								=> '',
 		'headline_text_widget_five'						=> '',
 		'content_text_widget_five'						=> '',
 		'headline_icon_class_text_widget_five'			=> '',
@@ -125,6 +127,7 @@ function themingisprose_theme_options_validate( $input ){
 
 	// Validate all text field options
 	foreach ( array(
+		'work_flow_title',
 		'primary_button_text_text_widget_five',
 		'headline_text_widget_five',
 		'primary_button_link_text_widget_five',

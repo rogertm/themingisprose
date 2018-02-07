@@ -5,3 +5,45 @@
 //
 @import "custom";
 @import "../../twenty-em/scss/theme";
+
+//
+// Front Page
+//
+.jumbo{
+	@extend .py-5;
+	&-title{
+		@extend .mb-5;
+	}
+}
+#jumbo{
+	&-work-flow{
+		@extend .text-center;
+		.carousel{
+			&-item{
+				@extend .my-5;
+				@extend .px-5;
+			}
+			&-indicators{
+				top: 0;
+				bottom: auto;
+				@extend .position-relative;
+				@extend .m-auto;
+				li{
+					@extend .w-100;
+					@extend .mx-auto;
+					@extend .text-center;
+					height: auto !important;
+					text-indent: unset;
+					cursor: pointer;
+					&:before,
+					&:after{
+						@extend .position-relative;
+					}
+					span{
+						@extend .d-block;
+					}
+				}
+			}
+		}
+	}
+}

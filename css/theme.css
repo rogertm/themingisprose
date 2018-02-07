@@ -4595,7 +4595,7 @@ a.bg-dark:focus, a.bg-dark:hover {
 .d-inline-block, .gallery .gallery-item, #top-menu h1#site-title {
   display: inline-block !important; }
 
-.d-block {
+.d-block, #jumbo-work-flow .carousel-indicators li span {
   display: block !important; }
 
 .d-table {
@@ -5260,7 +5260,7 @@ a.bg-dark:focus, a.bg-dark:hover {
 .position-static {
   position: static !important; }
 
-.position-relative {
+.position-relative, #jumbo-work-flow .carousel-indicators, #jumbo-work-flow .carousel-indicators li:before, #jumbo-work-flow .carousel-indicators li:after {
   position: relative !important; }
 
 .position-absolute {
@@ -5326,7 +5326,7 @@ a.bg-dark:focus, a.bg-dark:hover {
   width: 75% !important; }
 
 .w-100, #site-pagination.prev-next a, #posts-navigation.nav a,
-#comments-navigation.nav a {
+#comments-navigation.nav a, #jumbo-work-flow .carousel-indicators li {
   width: 100% !important; }
 
 .h-25 {
@@ -5482,15 +5482,17 @@ article .card-img-overlay #comments #cancel-comment-reply-link,
   margin: 3rem !important; }
 
 .mt-5, article .author-info,
-.my-5 {
+.my-5,
+#jumbo-work-flow .carousel-item {
   margin-top: 3rem !important; }
 
 .mr-5,
 .mx-5 {
   margin-right: 3rem !important; }
 
-.mb-5, #featured-widget-area.template-jumbotron #front-page-widget-one, #featured-widget-area.template-jumbotron #front-page-widget-one .widget-thumbnail, article, .author-info, .widget-container,
-.my-5 {
+.mb-5, #featured-widget-area.template-jumbotron #front-page-widget-one, #featured-widget-area.template-jumbotron #front-page-widget-one .widget-thumbnail, article, .author-info, .widget-container, .jumbo-title,
+.my-5,
+#jumbo-work-flow .carousel-item {
   margin-bottom: 3rem !important; }
 
 .ml-5,
@@ -5598,22 +5600,26 @@ article .card-img-overlay #comments #cancel-comment-reply-link,
   padding: 3rem !important; }
 
 .pt-5,
-.py-5 {
+.py-5,
+.jumbo {
   padding-top: 3rem !important; }
 
 .pr-5,
-.px-5 {
+.px-5,
+#jumbo-work-flow .carousel-item {
   padding-right: 3rem !important; }
 
 .pb-5,
-.py-5 {
+.py-5,
+.jumbo {
   padding-bottom: 3rem !important; }
 
 .pl-5, #comments .children,
-.px-5 {
+.px-5,
+#jumbo-work-flow .carousel-item {
   padding-left: 3rem !important; }
 
-.m-auto {
+.m-auto, #jumbo-work-flow .carousel-indicators {
   margin: auto !important; }
 
 .mt-auto,
@@ -5624,7 +5630,8 @@ article .card-img-overlay #comments #cancel-comment-reply-link,
 #comments-navigation.nav .post-previous,
 #comments-navigation.nav .comments-previous,
 .mx-auto,
-.aligncenter {
+.aligncenter,
+#jumbo-work-flow .carousel-indicators li {
   margin-right: auto !important; }
 
 .mb-auto,
@@ -5635,7 +5642,8 @@ article .card-img-overlay #comments #cancel-comment-reply-link,
 #comments-navigation.nav .post-next,
 #comments-navigation.nav .comments-next,
 .mx-auto,
-.aligncenter {
+.aligncenter,
+#jumbo-work-flow .carousel-indicators li {
   margin-left: auto !important; }
 
 @media (min-width: 576px) {
@@ -6644,7 +6652,7 @@ article .card-img-overlay #comments #cancel-comment-reply-link,
   text-align: right !important; }
 
 .text-center, #site-pagination.prev-next a, #posts-navigation.nav a,
-#comments-navigation.nav a, #site-info {
+#comments-navigation.nav a, #site-info, #jumbo-work-flow, #jumbo-work-flow .carousel-indicators li {
   text-align: center !important; }
 
 @media (min-width: 576px) {
@@ -8340,5 +8348,13 @@ article.sticky {
     text-align: right; }
   #site-info #site-info-left {
     text-align: left; } }
+
+#jumbo-work-flow .carousel-indicators {
+  top: 0;
+  bottom: auto; }
+  #jumbo-work-flow .carousel-indicators li {
+    height: auto !important;
+    text-indent: unset;
+    cursor: pointer; }
 
 /*# sourceMappingURL=theme.css.map */

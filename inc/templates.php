@@ -90,20 +90,20 @@ function themingisprose_work_flow_slide(){
 
 	global $t_em;
 ?>
-	<section id="work-flow" class="bg-secondary">
+	<section id="jumbo-work-flow" class="bg-secondary jumbo">
 		<div class="<?php echo t_em_container() ?>">
+			<h2 class="jumbo-title"><?php echo $t_em['work_flow_title'] ?></h2>
 			<div id="work-flow-carousel" class="carousel slide" data-ride="carousel">
 				<?php
 					$slides = t_em_front_page_widgets_options();
 					$ts = count( $slides );
 					$ind = array_keys( $slides );
 				?>
-				<!-- <pre><?php print_r( $ind ) ?></pre> -->
 				<ol class="carousel-indicators">
 				<?php $s = 0; while ( $s < $ts ) : ?>
 					<li data-target="#work-flow-carousel" data-slide-to="<?php echo $s ?>">
-						<span class="<?php echo $t_em['headline_icon_class_'.$ind[$s].''] ?>"></span>
-						<p><?php echo $t_em['headline_'.$ind[$s].''] ?></p>
+						<span class="<?php echo $t_em['headline_icon_class_'.$ind[$s].''] ?> h1"></span>
+						<span class="sr-only"><?php echo $t_em['headline_'.$ind[$s].''] ?></span>
 					</li>
 				<?php $s++; endwhile; ?>
 					</ol><!-- .carousel-indicators -->
@@ -119,7 +119,7 @@ function themingisprose_work_flow_slide(){
 							'<div class="work-flow-img '. t_em_grid( '5' ) .'"><img src="'. $t_em['thumbnail_src_'.$widget['name'].''] .'" alt="'. sanitize_text_field( $t_em['headline_'.$widget['name']] ) .'"/></div>' : null;
 
 						$widget_headline	= ( $t_em['headline_'.$widget['name'].''] ) ?
-							'<header class="work-flow-heading">'. $widget_icon_class .'<h3 class="h4">'. $t_em['headline_'.$widget['name'].''] .'</h3></header>' : null;
+							'<header class="work-flow-heading"><h3 class="h4">'. $t_em['headline_'.$widget['name'].''] .'</h3></header>' : null;
 
 						$widget_content		= ( $t_em['content_'.$widget['name'].''] ) ?
 							'<div class="work-flow-body lead">'. t_em_wrap_paragraph( do_shortcode( $t_em['content_'.$widget['name']] ) ) .'</div>' : null;
@@ -145,11 +145,9 @@ function themingisprose_work_flow_slide(){
 							$widget_footer = null;
 						endif;
 				?>
-					<div class="carousel-item" style="height:20rem;">
-						<div class="carousel-caption d-block text-dark">
-							<h3><?php echo $widget_headline; ?></h3>
-							<?php echo $widget_content ?>
-						</div>
+					<div class="carousel-item">
+						<h3><?php echo $widget_headline; ?></h3>
+						<?php echo $widget_content ?>
 					</div>
 				<?php
 						endif;

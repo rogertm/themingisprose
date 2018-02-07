@@ -18,6 +18,9 @@
 function themingisprose_setup(){
 	// Make Theming is Prose available for translation.
 	load_child_theme_textdomain( 'themingisprose', get_stylesheet_directory() . '/languages' );
+
+	// Hooks away
+	remove_action( 't_em_admin_action_from_page_option_widgets-front-page_after', 't_em_front_page_widtgets_templates_callback' );
 }
 add_action( 'after_setup_theme', 'themingisprose_setup' );
 
@@ -32,6 +35,9 @@ function themingisprose_enqueue(){
 	wp_enqueue_style( 'child-style' );
 
 	t_em_register_bootstrap_plugin( 'carousel' );
+
+	wp_register_script( 'themingisprose-utils', t_em_get_js( 'themingisprose.utils', T_EM_CHILD_THEME_DIR_PATH .'/js', T_EM_CHILD_THEME_DIR_URL .'/js' ), array( 'jquery' ), $t_em_theme_data['Version'], true );
+	wp_enqueue_script( 'themingisprose-utils' );
 }
 add_action( 'wp_enqueue_scripts', 'themingisprose_enqueue' );
 
