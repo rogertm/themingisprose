@@ -8,7 +8,8 @@
 	"type": "wordpress-theme",
 	"require": {
 		"php": ">=7.0",
-		"composer/installers": "^1.0"
+		"composer/installers": "^1.0",
+		"rogertm/twenty-em": "1.2.*"
 	},
 	"authors": [
 		{
