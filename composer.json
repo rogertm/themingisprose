@@ -4,7 +4,11 @@
 	"keywords": ["wordpress", "framework", "child theme"],
 	"homepage": "https://themingisprose.com",
 	"license": "GPL-2.0-or-later",
-	"minimum-stability": "stable",
+	"type": "wordpress-theme",
+	"require": {
+		"php": ">=7.0",
+		"rogertm/twenty-em": "dev-master",
+	}
 	"authors": [
 		{
 			"name": "RogerTM",
