@@ -7,7 +7,7 @@
 	"type": "wordpress-theme",
 	"require": {
 		"php": ">=7.0",
-		"rogertm/twenty-em": "dev-master",
+		"rogertm/twenty-em": "dev-master"
 	},
 	"authors": [
 		{
