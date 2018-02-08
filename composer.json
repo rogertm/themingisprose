@@ -6,6 +6,12 @@
 	"license": "GPL-2.0-or-later",
 	"minimum-stability": "stable",
 	"type": "wordpress-theme",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/rogertm/twenty-em"
+        }
+    ],
 	"require": {
 		"php": ">=7.0",
 		"composer/installers": "^1.0",
